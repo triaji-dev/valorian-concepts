@@ -118,7 +118,7 @@ body {
 }
 
 
-.hero-img-main { background-image: url("./public/woman-in-veil.png"); }
+.hero-img-main { background-image: url("./public/woman-in-veil.webp"); }
 
 .hero-overlay {
     position: absolute;
@@ -347,9 +347,9 @@ html {
 }
 
 /* Card Backgrounds */
-.card-img-1 { background-image: url("./public/concept-1.png"); }
-.card-img-2 { background-image: url("./public/concept-2.png"); }
-.card-img-3 { background-image: url("./public/woman-in-veil.png"); }
+.card-img-1 { background-image: url("./public/concept-1.webp"); }
+.card-img-2 { background-image: url("./public/concept-2.webp"); }
+.card-img-3 { background-image: url("./public/woman-in-veil.webp"); }
 
 .card-overlay {
     position: absolute;
