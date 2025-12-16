@@ -349,7 +349,7 @@ html {
 /* Card Backgrounds */
 .card-img-1 { background-image: url("./public/concept-1.png"); }
 .card-img-2 { background-image: url("./public/concept-2.png"); }
-.card-img-3 { background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCM9Xpb6tmcMk3FYIGpQVlW6ufIThzcNmfnJUG4f0tFInc37nHmZJOG9HL7mgeZkp08M63kCdk3_Z5Soylt3h1EQiyngherFvqoznfCvqGAd_7K51pYRRTi2WbEG10HwFE0nnSWhnwJVHlZ-KavCHeG1xkOv5mzfl4nZ2XLbCpsUx5PqhkkX2dMfVWk_skDGz2WogmmDzBQe2T465qv-1mUQjz9U6znKfFqpWysxgt8WmP2YnsQAVz9xefFYv7GpYlh7TpZ28ia-IRU"); }
+.card-img-3 { background-image: url("./public/woman-in-veil.png"); }
 
 .card-overlay {
     position: absolute;
