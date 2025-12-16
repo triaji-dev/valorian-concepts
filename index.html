@@ -460,5 +460,72 @@
             </div>
         </footer>
     </div>
+    <nav id="section-sidebar" class="sidebar">
+        <ul class="sidebar-list">
+            <li><a href="#design-concepts" class="sidebar-link">Design Concepts</a></li>
+            <li><a href="#wireframe" class="sidebar-link">Wireframe</a></li>
+            <li><a href="#seo" class="sidebar-link">Growth (SEO)</a></li>
+            <li><a href="#cms" class="sidebar-link">System (CMS)</a></li>
+            <li><a href="#crs" class="sidebar-link">Integration (CRS)</a></li>
+            <li><a href="#analytics" class="sidebar-link">Data (Analytics)</a></li>
+            <li><a href="#fees" class="sidebar-link">Investment</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('section-sidebar');
+            const heroSection = document.querySelector('.hero-section');
+            const sections = document.querySelectorAll('.portfolio-header-section, .pricing-section');
+            const navLinks = document.querySelectorAll('.sidebar-link');
+
+            function updateSidebar() {
+                const navHeight = sidebar.offsetHeight;
+                const heroBottom = heroSection.getBoundingClientRect().bottom;
+                
+                // Toggle visibility
+                if (heroBottom < 100) { // Slight buffer
+                    sidebar.classList.add('visible');
+                } else {
+                    sidebar.classList.remove('visible');
+                }
+
+                // Active state
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    // Adjust offset for trigger point (e.g., when section is 1/3 up the screen)
+                    if (window.scrollY >= (sectionTop - window.innerHeight / 3)) {
+                        // For Pricing section which doesn't have an ID on the section tag itself usually, 
+                        // but here we check IDs. 
+                        // Note: #fees is a div before the pricing section in the provided HTML.
+                        // We need to map the scroll position to the closest anchor ID.
+                        // Let's use the IDs directly if they exist on the elements in 'sections'
+                        if(section.id) {
+                            current = section.id;
+                        } else if (section.querySelector('[id]')) {
+                             // Fallback if ID is inside
+                        }
+                    }
+                });
+                
+                // Specific fix for the fees section since the ID is on a header div, not the big section
+                // The loop above captures #fees because it's a .portfolio-header-section
+                
+                // Highlight active link
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateSidebar);
+            updateSidebar(); // Initial check
+        });
+    </script>
 </body>
 </html>
